@@ -5,8 +5,11 @@ RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 RUN docker-php-ext-install pdo mbstring
+RUN docker-php-ext-install pdo_mysql
+RUN a2enmod rewrite
 
 COPY default.conf /etc/apache2/sites-enabled/000-default.conf
 WORKDIR /var/www/html/app
 CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
 EXPOSE 80
+~           
