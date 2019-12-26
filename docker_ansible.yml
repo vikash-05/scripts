@@ -1,0 +1,21 @@
+---
+- hosts: all
+  become: true
+  tasks:
+
+  - name: stop current running container
+    command: docker stop container-name
+
+  - name: remove stopped container
+  - command: docker rm comtainer-name
+
+  - name: remove docker image
+    command: docker rmi image-name
+
+  - name: build docker image using war file
+    command: docker build -t simple-devops-image
+    args:
+      chdir: /opt/docker
+
+  - name: create container using simple-devops-image
+    command: docker run -d --name simple-devops-container -p 8080:8080 simple-devops-image
