@@ -1,0 +1,22 @@
+
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+ name: testingHPA
+spec:
+ scaleTargetRef:
+   apiVersion: apps/v1beta1
+   kind: Deployment
+   name: awesome_app
+ minReplicas: 3
+ maxReplicas: 5
+ targetCPUUtilizationPercentage: 85
+
+***********************************************************************************
+create hpa
+kubectl apply -f autoscalig.yml
+
+**************************************************
+Horizontal Pod Autoscaler: controls the number of replicas in a deployment
+Vertical Pod Autoscaler: controls the amount of requested resources (CPU and Memory) for a pod
+Cluster Autoscaler: controls the number of nodes in a cluster

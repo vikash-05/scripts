@@ -1,0 +1,9 @@
+KOPS:- 
+    - To setup kubernetes on AWS, you can use a tolls called Kops.
+- kops stands for kubernetes operations.
+- The tool allows you to do production grade kubernetes installations upgrade and management.
+- i will use this tool to start a kubernetes cluster on AWS.
+- There is also a legacy tool called kube-up.sh.
+- This was a simple tool to bring up a cluster, but is now deprecated, it doesn't create production ready enviroment.
+- Kops only works on Mac/Linux.
+

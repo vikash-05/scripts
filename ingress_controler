@@ -1,0 +1,292 @@
+The authenticity of host '54.167.150.166 (54.167.150.166)' can't be established.
+ECDSA key fingerprint is SHA256:gBn+LRHAbrSMdMa6+MbsmkXHga9w7LVMl9J9Kk4R+WQ.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '54.167.150.166' (ECDSA) to the list of known hosts.
+Welcome to Ubuntu 18.04.3 LTS (GNU/Linux 4.15.0-1051-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+ System information disabled due to load higher than 1.0
+
+ * Overheard at KubeCon: "microk8s.status just blew my mind".
+
+     https://microk8s.io/docs/commands#microk8s.status
+
+86 packages can be updated.
+50 updates are security updates.
+
+
+Last login: Fri Jan 24 09:45:48 2020 from 103.73.35.79
+ubuntu@ip-10-0-9-219:~$ sudo su
+root@ip-10-0-9-219:/home/ubuntu# cd
+root@ip-10-0-9-219:~# ls
+helm  k8s  snap
+root@ip-10-0-9-219:~# kubectl get nodes
+NAME            STATUS   ROLES    AGE   VERSION
+ip-10-0-9-133   Ready    <none>   47h   v1.17.2
+ip-10-0-9-219   Ready    master   47h   v1.17.2
+root@ip-10-0-9-219:~# kubectl get pod
+NAME                                          READY   STATUS      RESTARTS   AGE
+nginx-85ff79dd56-t7zwm                        0/1     Completed   0          44h
+youthful-buffoon-testchart-7488b6f546-wt4rw   0/1     Error       0          47h
+root@ip-10-0-9-219:~# helm ls
+Error: could not find a ready tiller pod
+root@ip-10-0-9-219:~# tiller
+[main] 2020/01/26 07:29:27 Starting Tiller v2.16.1 (tls=false)
+[main] 2020/01/26 07:29:27 GRPC listening on :44134
+[main] 2020/01/26 07:29:27 Probes listening on :44135
+[main] 2020/01/26 07:29:27 Storage driver is ConfigMap
+[main] 2020/01/26 07:29:27 Max history per release is 0
+^Z
+[1]+  Stopped                 tiller
+root@ip-10-0-9-219:~# clear
+
+root@ip-10-0-9-219:~# ls
+helm  k8s  snap
+root@ip-10-0-9-219:~# cdd k8s/
+
+Command 'cdd' not found, did you mean:
+
+  command 'ldd' from deb libc-bin
+  command 'cdw' from deb cdw
+  command 'pdd' from deb pdd
+  command 'cd5' from deb cd5
+  command 'cdcd' from deb cdcd
+  command 'cdb' from deb tinycdb
+  command 'tdd' from deb devtodo
+  command 'ddd' from deb ddd
+  command 'cde' from deb cde
+  command 'cdv' from deb codeville
+  command 'cdp' from deb irpas
+  command 'dd' from deb coreutils
+  command 'cdo' from deb cdo
+  command 'cdi' from deb cdo
+  command 'cdde' from deb cdde
+
+Try: apt install <deb name>
+
+root@ip-10-0-9-219:~# cd k8s/
+root@ip-10-0-9-219:~/k8s# ls
+deploy.yaml  ingress.yml  lb.yml  load.yml  network.yaml
+root@ip-10-0-9-219:~/k8s# kubectl get svc
+NAME                         TYPE           CLUSTER-IP       EXTERNAL-IP   PORT(S)        AGE
+kubernetes                   ClusterIP      10.96.0.1        <none>        443/TCP        47h
+my-service                   LoadBalancer   10.104.224.84    <pending>     80:30639/TCP   45h
+youthful-buffoon-testchart   NodePort       10.108.197.218   <none>        80:30901/TCP   47h
+root@ip-10-0-9-219:~/k8s# vi lb.yml 
+root@ip-10-0-9-219:~/k8s# ssh -i "k8s.pem" ubuntu@54.167.150.166
+Warning: Identity file k8s.pem not accessible: No such file or directory.
+The authenticity of host '54.167.150.166 (54.167.150.166)' can't be established.
+ECDSA key fingerprint is SHA256:gBn+LRHAbrSMdMa6+MbsmkXHga9w7LVMl9J9Kk4R+WQ.
+Are you sure you want to continue connecting (yes/no)? no
+Host key verification failed.
+root@ip-10-0-9-219:~/k8s# 
+root@ip-10-0-9-219:~/k8s# 
+root@ip-10-0-9-219:~/k8s# 
+root@ip-10-0-9-219:~/k8s# 
+root@ip-10-0-9-219:~/k8s# kubectl get pods -0 wide
+Error: unknown shorthand flag: '0' in -0
+See 'kubectl get --help' for usage.
+root@ip-10-0-9-219:~/k8s# kubectl get pods -o wide
+NAME                                          READY   STATUS    RESTARTS   AGE   IP               NODE            NOMINATED NODE   READINESS GATES
+nginx-85ff79dd56-t7zwm                        1/1     Running   1          44h   192.168.137.85   ip-10-0-9-133   <none>           <none>
+youthful-buffoon-testchart-7488b6f546-wt4rw   1/1     Running   1          47h   192.168.137.81   ip-10-0-9-133   <none>           <none>
+root@ip-10-0-9-219:~/k8s# kubectl get pods -o wide --nameapace-all
+Error: unknown flag: --nameapace-all
+See 'kubectl get --help' for usage.
+root@ip-10-0-9-219:~/k8s# kubectl get pods -o wide --namespace-all
+Error: unknown flag: --namespace-all
+See 'kubectl get --help' for usage.
+root@ip-10-0-9-219:~/k8s# kubectl get nodes
+NAME            STATUS   ROLES    AGE   VERSION
+ip-10-0-9-133   Ready    <none>   47h   v1.17.2
+ip-10-0-9-219   Ready    master   47h   v1.17.2
+root@ip-10-0-9-219:~/k8s# kubectl get deploy
+NAME                         READY   UP-TO-DATE   AVAILABLE   AGE
+nginx                        1/1     1            1           44h
+youthful-buffoon-testchart   1/1     1            1           47h
+root@ip-10-0-9-219:~/k8s# kubectl get deploy -o wide
+NAME                         READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS   IMAGES             SELECTOR
+nginx                        1/1     1            1           44h   nginx        nginx              app=nginx
+youthful-buffoon-testchart   1/1     1            1           47h   testchart    vkdocker055/vk:3   app.kubernetes.io/instance=youthful-buffoon,app.kubernetes.io/name=testchart
+root@ip-10-0-9-219:~/k8s# kubectl describe deploy ngnix
+Error from server (NotFound): deployments.apps "ngnix" not found
+root@ip-10-0-9-219:~/k8s# kubectl describe deploy nginx
+Name:                   nginx
+Namespace:              default
+CreationTimestamp:      Fri, 24 Jan 2020 10:49:03 +0000
+Labels:                 app=nginx
+Annotations:            deployment.kubernetes.io/revision: 1
+Selector:               app=nginx
+Replicas:               1 desired | 1 updated | 1 total | 1 available | 0 unavailable
+StrategyType:           RollingUpdate
+MinReadySeconds:        0
+RollingUpdateStrategy:  25% max unavailable, 25% max surge
+Pod Template:
+  Labels:  app=nginx
+  Containers:
+   nginx:
+    Image:        nginx
+    Port:         80/TCP
+    Host Port:    0/TCP
+    Environment:  <none>
+    Mounts:       <none>
+  Volumes:        <none>
+Conditions:
+  Type           Status  Reason
+  ----           ------  ------
+  Progressing    True    NewReplicaSetAvailable
+  Available      True    MinimumReplicasAvailable
+OldReplicaSets:  <none>
+NewReplicaSet:   nginx-85ff79dd56 (1/1 replicas created)
+Events:          <none>
+root@ip-10-0-9-219:~/k8s# cat /etc/hoss
+cat: /etc/hoss: No such file or directory
+root@ip-10-0-9-219:~/k8s# cat /etc/hosts
+127.0.0.1 localhost
+
+# The following lines are desirable for IPv6 capable hosts
+::1 ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+ff02::3 ip6-allhosts
+root@ip-10-0-9-219:~/k8s# kubectl get svc
+NAME                         TYPE           CLUSTER-IP       EXTERNAL-IP   PORT(S)        AGE
+kubernetes                   ClusterIP      10.96.0.1        <none>        443/TCP        47h
+my-service                   LoadBalancer   10.104.224.84    <pending>     80:30639/TCP   45h
+youthful-buffoon-testchart   NodePort       10.108.197.218   <none>        80:30901/TCP   47h
+root@ip-10-0-9-219:~/k8s# kubectl get pod
+NAME                                          READY   STATUS    RESTARTS   AGE
+nginx-85ff79dd56-t7zwm                        1/1     Running   1          44h
+youthful-buffoon-testchart-7488b6f546-wt4rw   1/1     Running   1          47h
+root@ip-10-0-9-219:~/k8s# ls
+deploy.yaml  ingress.yml  lb.yml  load.yml  network.yaml
+root@ip-10-0-9-219:~/k8s# vi load.yml 
+root@ip-10-0-9-219:~/k8s# vi ingress.yml 
+root@ip-10-0-9-219:~/k8s# kubectl get svc
+NAME                         TYPE           CLUSTER-IP       EXTERNAL-IP   PORT(S)        AGE
+kubernetes                   ClusterIP      10.96.0.1        <none>        443/TCP        47h
+my-service                   LoadBalancer   10.104.224.84    <pending>     80:30639/TCP   45h
+youthful-buffoon-testchart   NodePort       10.108.197.218   <none>        80:30901/TCP   47h
+root@ip-10-0-9-219:~/k8s# kubectl delete svc my-service
+service "my-service" deleted
+root@ip-10-0-9-219:~/k8s# kubectl get svc
+NAME                         TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)        AGE
+kubernetes                   ClusterIP   10.96.0.1        <none>        443/TCP        47h
+youthful-buffoon-testchart   NodePort    10.108.197.218   <none>        80:30901/TCP   47h
+root@ip-10-0-9-219:~/k8s# kubectl get poy
+error: the server doesn't have a resource type "poy"
+root@ip-10-0-9-219:~/k8s# kubectl get deploy
+NAME                         READY   UP-TO-DATE   AVAILABLE   AGE
+nginx                        1/1     1            1           44h
+youthful-buffoon-testchart   1/1     1            1           47h
+root@ip-10-0-9-219:~/k8s# kubectl expose deployment --port=8000 --target-port=80 --tye=LoadBalancer
+Error: unknown flag: --tye
+See 'kubectl expose --help' for usage.
+root@ip-10-0-9-219:~/k8s# kubectl expose deployment --port=8000 --target-port=80 --type=LoadBalancer
+error: resource(s) were provided, but no name, label selector, or --all flag specified
+See 'kubectl expose -h' for help and examples
+root@ip-10-0-9-219:~/k8s# kubectl expose deployment --port=80 --target-port=80 --type=LoadBalancer
+error: resource(s) were provided, but no name, label selector, or --all flag specified
+See 'kubectl expose -h' for help and examples
+root@ip-10-0-9-219:~/k8s# kubectl expose deployment --port=8000 --target-port=80 --type=LoadBalancer nginx
+service/nginx exposed
+root@ip-10-0-9-219:~/k8s# kubectl get svc
+NAME                         TYPE           CLUSTER-IP       EXTERNAL-IP   PORT(S)          AGE
+kubernetes                   ClusterIP      10.96.0.1        <none>        443/TCP          47h
+nginx                        LoadBalancer   10.109.242.192   <pending>     8000:30185/TCP   17s
+youthful-buffoon-testchart   NodePort       10.108.197.218   <none>        80:30901/TCP     47h
+root@ip-10-0-9-219:~/k8s# kubectl get svc
+NAME                         TYPE           CLUSTER-IP       EXTERNAL-IP   PORT(S)          AGE
+kubernetes                   ClusterIP      10.96.0.1        <none>        443/TCP          47h
+nginx                        LoadBalancer   10.109.242.192   <pending>     8000:30185/TCP   79s
+youthful-buffoon-testchart   NodePort       10.108.197.218   <none>        80:30901/TCP     47h
+root@ip-10-0-9-219:~/k8s# kubectl get svc
+NAME                         TYPE           CLUSTER-IP       EXTERNAL-IP   PORT(S)          AGE
+kubernetes                   ClusterIP      10.96.0.1        <none>        443/TCP          47h
+nginx                        LoadBalancer   10.109.242.192   <pending>     8000:30185/TCP   86s
+youthful-buffoon-testchart   NodePort       10.108.197.218   <none>        80:30901/TCP     47h
+root@ip-10-0-9-219:~/k8s# 
+root@ip-10-0-9-219:~/k8s# wget https://raw.githubusercontent.com/kubernetes-sigs/aws-alb-ingress-controller/v1.1.5/docs/examples/alb-ingress-controller.yaml
+--2020-01-26 08:00:57--  https://raw.githubusercontent.com/kubernetes-sigs/aws-alb-ingress-controller/v1.1.5/docs/examples/alb-ingress-controller.yaml
+Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 151.101.248.133
+Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|151.101.248.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 3129 (3.1K) [text/plain]
+Saving to: ‘alb-ingress-controller.yaml’
+
+alb-ingress-controller.yaml                        100%[================================================================================================================>]   3.06K  --.-KB/s    in 0s      
+
+2020-01-26 08:00:57 (62.7 MB/s) - ‘alb-ingress-controller.yaml’ saved [3129/3129]
+
+root@ip-10-0-9-219:~/k8s# ls
+alb-ingress-controller.yaml  deploy.yaml  ingress.yml  lb.yml  load.yml  network.yaml
+root@ip-10-0-9-219:~/k8s# vi alb-ingress-controller.yaml 
+
+  # Namespace the ALB Ingress Controller should run in. Does not impact which
+  # namespaces it's able to resolve ingress resource for. For limiting ingress
+  # namespace scope, see --watch-namespace.
+  namespace: kube-system
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: alb-ingress-controller
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: alb-ingress-controller
+    spec:
+      containers:
+        - name: alb-ingress-controller
+          args:
+            # Limit the namespace where this ALB Ingress Controller deployment will
+            # resolve ingress resources. If left commented, all namespaces are used.
+            # - --watch-namespace=your-k8s-namespace
+
+            # Setting the ingress-class flag below ensures that only ingress resources with the
+            # annotation kubernetes.io/ingress.class: "alb" are respected by the controller. You may
+            # choose any class you'd like for this controller to respect.
+            - --ingress-class=alb
+
+            # REQUIRED
+            # Name of your cluster. Used when naming resources created
+            # by the ALB Ingress Controller, providing distinction between
+            # clusters.
+             - --cluster-name=kubernetes
+
+            # AWS VPC ID this ingress controller will use to create AWS resources.
+            # If unspecified, it will be discovered from ec2metadata.
+             - --aws-vpc-id=vpc-vpc-06bd66cbe7d4c8e5b
+
+            # AWS region this ingress controller will operate in.
+            # If unspecified, it will be discovered from ec2metadata.
+            # List of regions: http://docs.aws.amazon.com/general/latest/gr/rande.html#vpc_region
+             - --aws-region=us-east-1
+
+            # Enables logging on all outbound requests sent to the AWS API.
+            # If logging is desired, set to true.
+            # - --aws-api-debug
+            # Maximum number of times to retry the aws calls.
+            # defaults to 10.
+            # - --aws-max-retries=10
+          # env:
+            # AWS key id for authenticating with the AWS API.
+            # This is only here for examples. It's recommended you instead use
+            # a project like kube2iam for granting access.
+            #- name: AWS_ACCESS_KEY_ID
+            #  value: KEYVALUE
+
+            # AWS key secret for authenticating with the AWS API.
+            # This is only here for examples. It's recommended you instead use
+            # a project like kube2iam for granting access.
+            #- name: AWS_SECRET_ACCESS_KEY
+            #  value: SECRETVALUE
+          # Repository location of the ALB Ingress Controller.
+          image: docker.io/amazon/aws-alb-ingress-controller:v1.1.5
+      serviceAccountName: alb-ingress-controller
+      
+                                                                                                                                                                                          58,1          Bot

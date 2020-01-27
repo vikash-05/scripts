@@ -1,0 +1,29 @@
+
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /var/www/html
+    overwrite: true
+permissions: 
+  - object: /var/www/html/script
+    owner: root
+    mode: 777
+    type:
+      - directory
+hooks:
+  BeforeInstall:
+    - location: script/install_dependencies.sh
+      timeout: 300
+      runas: root
+  AfterInstall:
+    - location: script/install_composer_dependencies.sh
+      timeout: 30
+      runas: root
+    - location: script/start_server.sh
+      timeout: 30
+      runas: root
+  ApplicationStop:
+    - location: script/stop_server.sh
+      timeout: 30
+      runas: root

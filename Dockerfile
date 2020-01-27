@@ -12,4 +12,4 @@ COPY default.conf /etc/apache2/sites-enabled/000-default.conf
 WORKDIR /var/www/html/app
 CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
 EXPOSE 80
-~           
+         

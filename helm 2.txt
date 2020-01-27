@@ -1,0 +1,33 @@
+ 
+Helm Chart:- 
+      - A chart is a collection of files that describe a set of k8s resources.
+- A single chart can deploy an app, a piece of software, or a database.
+- It can have dependencies, e.g. to install wordpress chart, you need mysql chart.
+- you can write your own chart to deploy your application on k8s using helm.
+- Charts use templates that are typically developed by a package maintainer.
+- They will generate Yaml files that K8s undestands.
+- You can think of templates as dynamic yaml files, which can contain logic and variables.
+  
+commands:-
+1). helm init  - Insatll tiller on the cluster
+2). helm reset - Remove tiller from the cluster
+3). helm install - install a helm chart
+4). helm search - serch for a chart
+5). helm list - list releases(installed chart)
+6). helm upgrade upgrade - upgrade a release
+7). helm rollback - rollback a release to the previous version
+
+- you cab create helm charts to deploy your own apps.
+- It's the recommended way to deploy your application on kubernetes.
+- packaging the app, allows you deploy the app in 1 command(instead of using kubectl create/apply)
+- Helm allows for upgrades and rollbacks.
+- your helm chart is version controlled.
+ 
+Helm chart commands
+- helm create mychart
+- helm install mychart
+- echo $POD_NAME
+- kubectl port-forward $POD_NAME 8080:80
+- helm dependency update
+- kubectl logs virulent-boxer-mychart-6cd5b99f89-5k5kx
+- helm history virulent-boxer

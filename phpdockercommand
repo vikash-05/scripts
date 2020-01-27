@@ -1,0 +1,7 @@
+docker-compose exec app php artisan key:generate
+docker-compose exec app php artisan optimize
+docker-compose exec app php artisan migrate --seed
+docker-compose exec app php artisan make:controller MyController
+cat loopspot_live\ \(1\).sql | docker exec -i 16a0e459db0a /usr/bin/mysql -u vikas --password= loopspot_live
+docker exec -i 16a0e459db0a mysqldump --user=vikas --password= loopspot_live > lop.sql
+ 

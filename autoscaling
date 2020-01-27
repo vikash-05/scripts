@@ -1,0 +1,22 @@
+Document - Configuring HPA
+1. Create a Pod
+
+
+kubectl run php-apache --image=gcr.io/google_containers/hpa-example  --expose --port=80 --requests=cpu=200m
+
+
+2. Create HPA
+
+kubectl autoscale deployment php-apache --cpu-percent=50 --min=1 --max=2
+
+
+
+3. Create Load Generator POD
+
+
+
+kubectl run -i --tty load-generator --image=busybox /bin/sh
+
+
+
+while true; do wget -q -O- POD-IP-HERE; done

@@ -1,0 +1,1103 @@
+Last login: Tue Jan 14 07:40:54 on ttys002
+apples-MacBook-Pro:Downloads Arlab07$ ssh -i "ansible.pem" @54.91.170.101
+usage: ssh [-46AaCfGgKkMNnqsTtVvXxYy] [-B bind_interface]
+           [-b bind_address] [-c cipher_spec] [-D [bind_address:]port]
+           [-E log_file] [-e escape_char] [-F configfile] [-I pkcs11]
+           [-i identity_file] [-J [user@]host[:port]] [-L address]
+           [-l login_name] [-m mac_spec] [-O ctl_cmd] [-o option] [-p port]
+           [-Q query_option] [-R address] [-S ctl_path] [-W host:port]
+           [-w local_tun[:remote_tun]] destination [command]
+apples-MacBook-Pro:Downloads Arlab07$ ssh -i "ansible.pem" @54.91.170.101
+usage: ssh [-46AaCfGgKkMNnqsTtVvXxYy] [-B bind_interface]
+           [-b bind_address] [-c cipher_spec] [-D [bind_address:]port]
+           [-E log_file] [-e escape_char] [-F configfile] [-I pkcs11]
+           [-i identity_file] [-J [user@]host[:port]] [-L address]
+           [-l login_name] [-m mac_spec] [-O ctl_cmd] [-o option] [-p port]
+           [-Q query_option] [-R address] [-S ctl_path] [-W host:port]
+           [-w local_tun[:remote_tun]] destination [command]
+apples-MacBook-Pro:Downloads Arlab07$ ssh -i "ansible.pem" ubuntu@54.91.170.101
+Welcome to Ubuntu 16.04.6 LTS (GNU/Linux 4.4.0-1100-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+ * Overheard at KubeCon: "microk8s.status just blew my mind".
+
+     https://microk8s.io/docs/commands#microk8s.status
+
+1 package can be updated.
+1 update is a security update.
+
+New release '18.04.3 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+Last login: Wed Jan 15 02:58:22 2020 from 103.82.80.119
+ubuntu@ip-10-0-0-14:~$ sudo su
+sudo: unable to resolve host ip-10-0-0-14
+bash: export: `=': not a valid identifier
+bash: export: `/root/go': not a valid identifier
+bash: export: `=': not a valid identifier
+bash: export: `/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/bin': not a valid identifier
+root@ip-10-0-0-14:/home/ubuntu# cd
+root@ip-10-0-0-14:~# cd helm/
+root@ip-10-0-0-14:~/helm# kubectl get svc
+NAME                                  TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE
+apache-pod                            NodePort    10.96.99.221    <none>        80:30316/TCP   6d
+dashboard-demo-kubernetes-dashboard   ClusterIP   10.96.216.38    <none>        443/TCP        2d
+eponymous-sabertooth-mysqlchart       NodePort    10.96.219.11    <none>        80:32138/TCP   42h
+kubernetes                            ClusterIP   10.96.0.1       <none>        443/TCP        6d1h
+mean-puma-mychart                     NodePort    10.96.115.155   <none>        80:32111/TCP   42h
+mysql-pod                             NodePort    10.96.180.191   <none>        80:31933/TCP   5d19h
+open-horse-mysqlchart                 NodePort    10.96.238.19    <none>        80:32540/TCP   40h
+opinionated-chinchilla-phpchart       NodePort    10.96.3.62      <none>        80:32133/TCP   47m
+php-service                           NodePort    10.96.234.19    <none>        80:31111/TCP   4d18h
+unrealistic-kiwi-phpchart             NodePort    10.96.219.1     <none>        80:30438/TCP   44m
+root@ip-10-0-0-14:~/helm# 
+root@ip-10-0-0-14:~/helm# 
+root@ip-10-0-0-14:~/helm# ls
+mychart  mysqlchart  phpchart  tiller-clusterrolebinding.yaml
+root@ip-10-0-0-14:~/helm# ls
+mychart  mysqlchart  phpchart  tiller-clusterrolebinding.yaml
+root@ip-10-0-0-14:~/helm# cd phpchart/
+root@ip-10-0-0-14:~/helm/phpchart# ls
+Chart.yaml  charts  templates  values.yaml
+root@ip-10-0-0-14:~/helm/phpchart# vi values.yaml 
+root@ip-10-0-0-14:~/helm/phpchart# kubectl get svc
+NAME                                  TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE
+apache-pod                            NodePort    10.96.99.221    <none>        80:30316/TCP   6d1h
+dashboard-demo-kubernetes-dashboard   ClusterIP   10.96.216.38    <none>        443/TCP        2d
+eponymous-sabertooth-mysqlchart       NodePort    10.96.219.11    <none>        80:32138/TCP   42h
+kubernetes                            ClusterIP   10.96.0.1       <none>        443/TCP        6d1h
+mean-puma-mychart                     NodePort    10.96.115.155   <none>        80:32111/TCP   43h
+mysql-pod                             NodePort    10.96.180.191   <none>        80:31933/TCP   5d19h
+open-horse-mysqlchart                 NodePort    10.96.238.19    <none>        80:32540/TCP   40h
+opinionated-chinchilla-phpchart       NodePort    10.96.3.62      <none>        80:32133/TCP   53m
+php-service                           NodePort    10.96.234.19    <none>        80:31111/TCP   4d18h
+unrealistic-kiwi-phpchart             NodePort    10.96.219.1     <none>        80:30438/TCP   50m
+root@ip-10-0-0-14:~/helm/phpchart# vi values.yaml 
+root@ip-10-0-0-14:~/helm/phpchart# 
+root@ip-10-0-0-14:~/helm/phpchart# 
+root@ip-10-0-0-14:~/helm/phpchart# 
+root@ip-10-0-0-14:~/helm/phpchart# 
+root@ip-10-0-0-14:~/helm/phpchart# 
+root@ip-10-0-0-14:~/helm/phpchart# 
+root@ip-10-0-0-14:~/helm/phpchart# packet_write_wait: Connection to 54.91.170.101 port 22: Broken pipe
+apples-MacBook-Pro:Downloads Arlab07$ ssh -i "ansible.pem" ubuntu@54.235.8.25
+Welcome to Ubuntu 16.04.6 LTS (GNU/Linux 4.4.0-1100-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+ * Overheard at KubeCon: "microk8s.status just blew my mind".
+
+     https://microk8s.io/docs/commands#microk8s.status
+
+0 packages can be updated.
+0 updates are security updates.
+
+New release '18.04.3 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+Last login: Thu Jan 16 04:28:14 2020 from 103.82.80.145
+ubuntu@ip-10-0-0-14:~$ sudo su
+sudo: unable to resolve host ip-10-0-0-14
+bash: export: `=': not a valid identifier
+bash: export: `/root/go': not a valid identifier
+bash: export: `=': not a valid identifier
+bash: export: `/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/bin': not a valid identifier
+root@ip-10-0-0-14:/home/ubuntu# cd
+root@ip-10-0-0-14:~# ls
+dashboard  go  helm  k8s  node_modules  snap
+root@ip-10-0-0-14:~# cd helm/
+root@ip-10-0-0-14:~/helm# ls
+mychart  mysqlchart  phpchart  tiller-clusterrolebinding.yaml
+root@ip-10-0-0-14:~/helm# helm ls
+NAME                	REVISION	UPDATED                 	STATUS CHART                      	APP VERSION	NAMESPACE
+affable-cow         	1       	Thu Jan 16 05:28:46 2020	DEPLOYEphpchart-0.1.0             	1.0        	default  
+dashboard-demo      	1       	Mon Jan 13 03:23:29 2020	DEPLOYEkubernetes-dashboard-1.10.1	1.10.1     	default  
+eponymous-sabertooth	1       	Mon Jan 13 09:24:52 2020	DEPLOYEmysqlchart-0.1.0           	1.0        	default  
+mean-puma           	1       	Mon Jan 13 09:16:21 2020	DEPLOYEmychart-0.1.0              	1.0        	default  
+open-horse          	1       	Mon Jan 13 11:58:48 2020	DEPLOYEmysqlchart-0.1.0           	1.0        	default  
+root@ip-10-0-0-14:~/helm#  helm delete ssh -i "ansible.pem" ubuntu@54.235.8.25
+Error: unknown shorthand flag: 'i' in -i
+root@ip-10-0-0-14:~/helm# 
+root@ip-10-0-0-14:~/helm# helm delete open-horse
+release "open-horse" deleted
+root@ip-10-0-0-14:~/helm# helm delete mean-puma 
+release "mean-puma" deleted
+root@ip-10-0-0-14:~/helm# helm ls
+NAME                	REVISION	UPDATED                 	STATUS  	CHART                      	APP VERSION	NAMESPACE
+affable-cow         	1       	Thu Jan 16 05:28:46 2020	DEPLOYED	phpchart-0.1.0             	1.0        	default  
+dashboard-demo      	1       	Mon Jan 13 03:23:29 2020	DEPLOYED	kubernetes-dashboard-1.10.1	1.10.1     	default  
+eponymous-sabertooth	1       	Mon Jan 13 09:24:52 2020	DEPLOYED	mysqlchart-0.1.0           	1.0        	default  
+root@ip-10-0-0-14:~/helm# helm delete affable-cow
+release "affable-cow" deleted
+root@ip-10-0-0-14:~/helm# helm delete eponymous-sabertooth
+release "eponymous-sabertooth" deleted
+root@ip-10-0-0-14:~/helm# kubectl get svc
+NAME                                  TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE
+apache-pod                            NodePort    10.96.99.221    <none>        80:30316/TCP   7d6h
+dashboard-demo-kubernetes-dashboard   ClusterIP   10.96.216.38    <none>        443/TCP        3d5h
+kubernetes                            ClusterIP   10.96.0.1       <none>        443/TCP        7d6h
+mysql-pod                             NodePort    10.96.180.191   <none>        80:31933/TCP   7d
+php-service                           NodePort    10.96.234.19    <none>        80:31111/TCP   5d23h
+root@ip-10-0-0-14:~/helm# kubectl delete svc php-service
+service "php-service" deleted
+root@ip-10-0-0-14:~/helm# kubectl delete svc mysql-pod
+service "mysql-pod" deleted
+root@ip-10-0-0-14:~/helm# kubectl get pod
+NAME                                                   READY   STATUS             RESTARTS   AGE
+dashboard-demo-kubernetes-dashboard-59db4d65dc-4s8mh   0/1     CrashLoopBackOff   652        3d
+php-deployment-68b76dd76-4mwvz                         1/1     Running            3          3d
+root@ip-10-0-0-14:~/helm# kubectl delete pod php-deployment-68b76dd76-4mwvz
+pod "php-deployment-68b76dd76-4mwvz" deleted
+
+^C
+root@ip-10-0-0-14:~/helm# kubectl get pod
+NAME                                                   READY   STATUS             RESTARTS   AGE
+dashboard-demo-kubernetes-dashboard-59db4d65dc-4s8mh   0/1     CrashLoopBackOff   652        3d
+php-deployment-68b76dd76-4mwvz                         1/1     Terminating        3          3d
+php-deployment-68b76dd76-9vkm6                         1/1     Running            0          29s
+root@ip-10-0-0-14:~/helm# kubectl delete svc apache-pod 
+service "apache-pod" deleted
+root@ip-10-0-0-14:~/helm# kubectl delete pod php-deployment-68b76dd76-4mwvz
+Error from server (NotFound): pods "php-deployment-68b76dd76-4mwvz" not found
+root@ip-10-0-0-14:~/helm# kubectl delete pod php-deployment-68b76dd76-9vkm6
+pod "php-deployment-68b76dd76-9vkm6" deleted
+^C
+root@ip-10-0-0-14:~/helm# helm list
+NAME          	REVISION	UPDATED                 	STATUS  	CHART                      	APP VERSION	NAMESPACE
+dashboard-demo	1       	Mon Jan 13 03:23:29 2020	DEPLOYED	kubernetes-dashboard-1.10.1	1.10.1     	default  
+root@ip-10-0-0-14:~/helm# kubectl get pod
+NAME                                                   READY   STATUS             RESTARTS   AGE
+dashboard-demo-kubernetes-dashboard-59db4d65dc-4s8mh   0/1     CrashLoopBackOff   652        3d
+php-deployment-68b76dd76-9vkm6                         1/1     Terminating        0          104s
+php-deployment-68b76dd76-pl8sp                         1/1     Running            0          29s
+root@ip-10-0-0-14:~/helm# ls
+mychart  mysqlchart  phpchart  tiller-clusterrolebinding.yaml
+root@ip-10-0-0-14:~/helm# 
+root@ip-10-0-0-14:~/helm# vi phpchart/
+root@ip-10-0-0-14:~/helm# cd phpchart/
+root@ip-10-0-0-14:~/helm/phpchart# ls
+Chart.yaml  charts  templates  values.yaml
+root@ip-10-0-0-14:~/helm/phpchart# vi values.yaml 
+root@ip-10-0-0-14:~/helm/phpchart# helm install .  --set service.type=NodePort
+NAME:   mortal-oyster
+LAST DEPLOYED: Thu Jan 16 09:23:17 2020
+NAMESPACE: default
+STATUS: DEPLOYED
+
+RESOURCES:
+==> v1/Deployment
+NAME                    AGE
+mortal-oyster-phpchart  0s
+
+==> v1/Pod(related)
+NAME                                     AGE
+mortal-oyster-phpchart-778568894d-b4fv4  0s
+
+==> v1/Service
+NAME                    AGE
+mortal-oyster-phpchart  0s
+
+==> v1/ServiceAccount
+NAME                    AGE
+mortal-oyster-phpchart  0s
+
+
+NOTES:
+1. Get the application URL by running these commands:
+  export NODE_PORT=$(kubectl get --namespace default -o jsonpath="{.spec.ports[0].nodePort}" services mortal-oyster-phpchart)
+  export NODE_IP=$(kubectl get nodes --namespace default -o jsonpath="{.items[0].status.addresses[0].address}")
+  echo http://$NODE_IP:$NODE_PORT
+
+root@ip-10-0-0-14:~/helm/phpchart# kubectl get pod
+NAME                                                   READY   STATUS             RESTARTS   AGE
+dashboard-demo-kubernetes-dashboard-59db4d65dc-4s8mh   0/1     CrashLoopBackOff   653        3d
+mortal-oyster-phpchart-778568894d-b4fv4                0/1     Running            0          8s
+php-deployment-68b76dd76-pl8sp                         1/1     Running            0          6m35s
+root@ip-10-0-0-14:~/helm/phpchart# kubectl get pod
+NAME                                                   READY   STATUS             RESTARTS   AGE
+dashboard-demo-kubernetes-dashboard-59db4d65dc-4s8mh   0/1     CrashLoopBackOff   653        3d
+mortal-oyster-phpchart-778568894d-b4fv4                0/1     Running            0          20s
+php-deployment-68b76dd76-pl8sp                         1/1     Running            0          6m47s
+root@ip-10-0-0-14:~/helm/phpchart# kubectl get pod
+NAME                                                   READY   STATUS             RESTARTS   AGE
+dashboard-demo-kubernetes-dashboard-59db4d65dc-4s8mh   0/1     CrashLoopBackOff   653        3d
+mortal-oyster-phpchart-778568894d-b4fv4                0/1     Running            0          26s
+php-deployment-68b76dd76-pl8sp                         1/1     Running            0          6m53s
+root@ip-10-0-0-14:~/helm/phpchart# kubectl get pod
+NAME                                                   READY   STATUS             RESTARTS   AGE
+dashboard-demo-kubernetes-dashboard-59db4d65dc-4s8mh   0/1     CrashLoopBackOff   654        3d
+mortal-oyster-phpchart-778568894d-b4fv4                0/1     Running            0          39s
+php-deployment-68b76dd76-pl8sp                         1/1     Running            0          7m6s
+root@ip-10-0-0-14:~/helm/phpchart# kubectl get pod
+NAME                                                   READY   STATUS             RESTARTS   AGE
+dashboard-demo-kubernetes-dashboard-59db4d65dc-4s8mh   0/1     CrashLoopBackOff   654        3d
+mortal-oyster-phpchart-778568894d-b4fv4                0/1     Running            0          52s
+php-deployment-68b76dd76-pl8sp                         1/1     Running            0          7m19s
+root@ip-10-0-0-14:~/helm/phpchart# kubectl get deployment 
+NAME                                  READY   UP-TO-DATE   AVAILABLE   AGE
+dashboard-demo-kubernetes-dashboard   0/1     1            0           3d6h
+mortal-oyster-phpchart                0/1     1            0           79s
+php-deployment                        1/1     1            1           5d23h
+root@ip-10-0-0-14:~/helm/phpchart# kubectl delete deployment php-deploymen
+Error from server (NotFound): deployments.apps "php-deploymen" not found
+root@ip-10-0-0-14:~/helm/phpchart# kubectl get deployment 
+NAME                                  READY   UP-TO-DATE   AVAILABLE   AGE
+dashboard-demo-kubernetes-dashboard   0/1     1            0           3d6h
+mortal-oyster-phpchart                0/1     1            0           2m8s
+php-deployment                        1/1     1            1           5d23h
+root@ip-10-0-0-14:~/helm/phpchart# kubectl delete deployment php-deployment
+deployment.apps "php-deployment" deleted
+root@ip-10-0-0-14:~/helm/phpchart# helm ls
+NAME          	REVISION	UPDATED                 	STATUS  	CHART                      	APP VERSION	NAMESPACE
+dashboard-demo	1       	Mon Jan 13 03:23:29 2020	DEPLOYED	kubernetes-dashboard-1.10.1	1.10.1     	default  
+mortal-oyster 	1       	Thu Jan 16 09:23:17 2020	DEPLOYED	phpchart-0.1.0             	1.0        	default  
+root@ip-10-0-0-14:~/helm/phpchart# kubectl get pod
+NAME                                                   READY   STATUS             RESTARTS   AGE
+dashboard-demo-kubernetes-dashboard-59db4d65dc-4s8mh   0/1     CrashLoopBackOff   654        3d
+mortal-oyster-phpchart-778568894d-b4fv4                0/1     Running            3          3m9s
+root@ip-10-0-0-14:~/helm/phpchart# helm delete mortal-oyster 
+release "mortal-oyster" deleted
+root@ip-10-0-0-14:~/helm/phpchart# ls
+Chart.yaml  charts  templates  values.yaml
+root@ip-10-0-0-14:~/helm/phpchart# cd ..
+root@ip-10-0-0-14:~/helm# ls
+mychart  mysqlchart  phpchart  tiller-clusterrolebinding.yaml
+root@ip-10-0-0-14:~/helm# cd mychart/
+root@ip-10-0-0-14:~/helm/mychart# ls
+Chart.yaml  charts  templates  values.yaml
+root@ip-10-0-0-14:~/helm/mychart# vi values.yaml 
+root@ip-10-0-0-14:~/helm/mychart# helm install .  --set service.type=NodePort
+NAME:   exiled-worm
+LAST DEPLOYED: Thu Jan 16 09:28:09 2020
+NAMESPACE: default
+STATUS: DEPLOYED
+
+RESOURCES:
+==> v1/Deployment
+NAME                 AGE
+exiled-worm-mychart  0s
+
+==> v1/Pod(related)
+NAME                                  AGE
+exiled-worm-mychart-86f587c788-rz7x6  0s
+
+==> v1/Service
+NAME                 AGE
+exiled-worm-mychart  0s
+
+==> v1/ServiceAccount
+NAME                 AGE
+exiled-worm-mychart  0s
+
+
+NOTES:
+1. Get the application URL by running these commands:
+  export NODE_PORT=$(kubectl get --namespace default -o jsonpath="{.spec.ports[0].nodePort}" services exiled-worm-mychart)
+  export NODE_IP=$(kubectl get nodes --namespace default -o jsonpath="{.items[0].status.addresses[0].address}")
+  echo http://$NODE_IP:$NODE_PORT
+
+root@ip-10-0-0-14:~/helm/mychart# kubectl get pod
+NAME                                                   READY   STATUS             RESTARTS   AGE
+dashboard-demo-kubernetes-dashboard-59db4d65dc-4s8mh   0/1     CrashLoopBackOff   654        3d
+exiled-worm-mychart-86f587c788-rz7x6                   0/1     Running            0          8s
+root@ip-10-0-0-14:~/helm/mychart# kubectl get event
+LAST SEEN   TYPE      REASON              OBJECT                                                     MESSAGE
+24m         Warning   Unhealthy           pod/affable-cow-phpchart-7ffb65665f-lhtft                  Readiness probe failed: HTTP probe failed with statuscode: 404
+14m         Warning   BackOff             pod/affable-cow-phpchart-7ffb65665f-lhtft                  Back-off restarting failed container
+3m5s        Warning   BackOff             pod/dashboard-demo-kubernetes-dashboard-59db4d65dc-4s8mh   Back-off restarting failed container
+2m52s       Normal    FailedBinding       persistentvolumeclaim/data-quaffing-sabertooth-mariadb-0   no persistent volumes available for this claim and no storage class is set
+14m         Normal    Killing             pod/eponymous-sabertooth-mysqlchart-7dcbc64746-t828l       Stopping container mysqlchart
+14m         Warning   Unhealthy           pod/eponymous-sabertooth-mysqlchart-7dcbc64746-t828l       Liveness probe failed: Get http://192.168.103.84:80/: dial tcp 192.168.103.84:80: connect: connection refused
+<unknown>   Normal    Scheduled           pod/exiled-worm-mychart-86f587c788-rz7x6                   Successfully assigned default/exiled-worm-mychart-86f587c788-rz7x6 to ip-10-0-0-45
+18s         Normal    Pulled              pod/exiled-worm-mychart-86f587c788-rz7x6                   Container image "vkdocker055/php:latest" already present on machine
+18s         Normal    Created             pod/exiled-worm-mychart-86f587c788-rz7x6                   Created container mychart
+18s         Normal    Started             pod/exiled-worm-mychart-86f587c788-rz7x6                   Started container mychart
+4s          Warning   Unhealthy           pod/exiled-worm-mychart-86f587c788-rz7x6                   Readiness probe failed: HTTP probe failed with statuscode: 404
+3s          Warning   Unhealthy           pod/exiled-worm-mychart-86f587c788-rz7x6                   Liveness probe failed: HTTP probe failed with statuscode: 404
+19s         Normal    SuccessfulCreate    replicaset/exiled-worm-mychart-86f587c788                  Created pod: exiled-worm-mychart-86f587c788-rz7x6
+19s         Normal    ScalingReplicaSet   deployment/exiled-worm-mychart                             Scaled up replica set exiled-worm-mychart-86f587c788 to 1
+14m         Normal    Killing             pod/mean-puma-mychart-6447569cf6-9tpcm                     Stopping container mychart
+<unknown>   Normal    Scheduled           pod/mortal-oyster-phpchart-778568894d-b4fv4                Successfully assigned default/mortal-oyster-phpchart-778568894d-b4fv4 to ip-10-0-0-45
+4m12s       Normal    Pulled              pod/mortal-oyster-phpchart-778568894d-b4fv4                Container image "vkdocker055/php1:latest" already present on machine
+4m12s       Normal    Created             pod/mortal-oyster-phpchart-778568894d-b4fv4                Created container phpchart
+4m12s       Normal    Started             pod/mortal-oyster-phpchart-778568894d-b4fv4                Started container phpchart
+3m28s       Warning   Unhealthy           pod/mortal-oyster-phpchart-778568894d-b4fv4                Readiness probe failed: HTTP probe failed with statuscode: 404
+3m42s       Warning   Unhealthy           pod/mortal-oyster-phpchart-778568894d-b4fv4                Liveness probe failed: HTTP probe failed with statuscode: 404
+3m42s       Normal    Killing             pod/mortal-oyster-phpchart-778568894d-b4fv4                Container phpchart failed liveness probe, will be restarted
+5m11s       Normal    SuccessfulCreate    replicaset/mortal-oyster-phpchart-778568894d               Created pod: mortal-oyster-phpchart-778568894d-b4fv4
+5m11s       Normal    ScalingReplicaSet   deployment/mortal-oyster-phpchart                          Scaled up replica set mortal-oyster-phpchart-778568894d to 1
+15m         Normal    Killing             pod/open-horse-mysqlchart-6b5d5f5bb9-zwjxv                 Stopping container mysqlchart
+12m         Normal    Killing             pod/php-deployment-68b76dd76-4mwvz                         Stopping container php-container
+<unknown>   Normal    Scheduled           pod/php-deployment-68b76dd76-9vkm6                         Successfully assigned default/php-deployment-68b76dd76-9vkm6 to ip-10-0-0-45
+12m         Normal    Pulling             pod/php-deployment-68b76dd76-9vkm6                         Pulling image "vkdocker055/php"
+12m         Normal    Pulled              pod/php-deployment-68b76dd76-9vkm6                         Successfully pulled image "vkdocker055/php"
+12m         Normal    Created             pod/php-deployment-68b76dd76-9vkm6                         Created container php-container
+12m         Normal    Started             pod/php-deployment-68b76dd76-9vkm6                         Started container php-container
+11m         Normal    Killing             pod/php-deployment-68b76dd76-9vkm6                         Stopping container php-container
+<unknown>   Normal    Scheduled           pod/php-deployment-68b76dd76-pl8sp                         Successfully assigned default/php-deployment-68b76dd76-pl8sp to ip-10-0-0-45
+11m         Normal    Pulling             pod/php-deployment-68b76dd76-pl8sp                         Pulling image "vkdocker055/php"
+11m         Normal    Pulled              pod/php-deployment-68b76dd76-pl8sp                         Successfully pulled image "vkdocker055/php"
+11m         Normal    Created             pod/php-deployment-68b76dd76-pl8sp                         Created container php-container
+11m         Normal    Started             pod/php-deployment-68b76dd76-pl8sp                         Started container php-container
+2m43s       Normal    Killing             pod/php-deployment-68b76dd76-pl8sp                         Stopping container php-container
+12m         Normal    SuccessfulCreate    replicaset/php-deployment-68b76dd76                        Created pod: php-deployment-68b76dd76-9vkm6
+11m         Normal    SuccessfulCreate    replicaset/php-deployment-68b76dd76                        Created pod: php-deployment-68b76dd76-pl8sp
+2m35s       Warning   FailedGetScale      horizontalpodautoscaler/php-deployment                     deployments/scale.apps "php_app" not found
+root@ip-10-0-0-14:~/helm/mychart# kubectl get event
+LAST SEEN   TYPE      REASON              OBJECT                                                     MESSAGE
+24m         Warning   Unhealthy           pod/affable-cow-phpchart-7ffb65665f-lhtft                  Readiness probe failed: HTTP probe failed with statuscode: 404
+14m         Warning   BackOff             pod/affable-cow-phpchart-7ffb65665f-lhtft                  Back-off restarting failed container
+3m24s       Warning   BackOff             pod/dashboard-demo-kubernetes-dashboard-59db4d65dc-4s8mh   Back-off restarting failed container
+3m11s       Normal    FailedBinding       persistentvolumeclaim/data-quaffing-sabertooth-mariadb-0   no persistent volumes available for this claim and no storage class is set
+14m         Normal    Killing             pod/eponymous-sabertooth-mysqlchart-7dcbc64746-t828l       Stopping container mysqlchart
+14m         Warning   Unhealthy           pod/eponymous-sabertooth-mysqlchart-7dcbc64746-t828l       Liveness probe failed: Get http://192.168.103.84:80/: dial tcp 192.168.103.84:80: connect: connection refused
+<unknown>   Normal    Scheduled           pod/exiled-worm-mychart-86f587c788-rz7x6                   Successfully assigned default/exiled-worm-mychart-86f587c788-rz7x6 to ip-10-0-0-45
+37s         Normal    Pulled              pod/exiled-worm-mychart-86f587c788-rz7x6                   Container image "vkdocker055/php:latest" already present on machine
+37s         Normal    Created             pod/exiled-worm-mychart-86f587c788-rz7x6                   Created container mychart
+37s         Normal    Started             pod/exiled-worm-mychart-86f587c788-rz7x6                   Started container mychart
+3s          Warning   Unhealthy           pod/exiled-worm-mychart-86f587c788-rz7x6                   Readiness probe failed: HTTP probe failed with statuscode: 404
+12s         Warning   Unhealthy           pod/exiled-worm-mychart-86f587c788-rz7x6                   Liveness probe failed: HTTP probe failed with statuscode: 404
+12s         Normal    Killing             pod/exiled-worm-mychart-86f587c788-rz7x6                   Container mychart failed liveness probe, will be restarted
+38s         Normal    SuccessfulCreate    replicaset/exiled-worm-mychart-86f587c788                  Created pod: exiled-worm-mychart-86f587c788-rz7x6
+38s         Normal    ScalingReplicaSet   deployment/exiled-worm-mychart                             Scaled up replica set exiled-worm-mychart-86f587c788 to 1
+15m         Normal    Killing             pod/mean-puma-mychart-6447569cf6-9tpcm                     Stopping container mychart
+<unknown>   Normal    Scheduled           pod/mortal-oyster-phpchart-778568894d-b4fv4                Successfully assigned default/mortal-oyster-phpchart-778568894d-b4fv4 to ip-10-0-0-45
+4m31s       Normal    Pulled              pod/mortal-oyster-phpchart-778568894d-b4fv4                Container image "vkdocker055/php1:latest" already present on machine
+4m31s       Normal    Created             pod/mortal-oyster-phpchart-778568894d-b4fv4                Created container phpchart
+4m31s       Normal    Started             pod/mortal-oyster-phpchart-778568894d-b4fv4                Started container phpchart
+3m47s       Warning   Unhealthy           pod/mortal-oyster-phpchart-778568894d-b4fv4                Readiness probe failed: HTTP probe failed with statuscode: 404
+4m1s        Warning   Unhealthy           pod/mortal-oyster-phpchart-778568894d-b4fv4                Liveness probe failed: HTTP probe failed with statuscode: 404
+4m1s        Normal    Killing             pod/mortal-oyster-phpchart-778568894d-b4fv4                Container phpchart failed liveness probe, will be restarted
+5m30s       Normal    SuccessfulCreate    replicaset/mortal-oyster-phpchart-778568894d               Created pod: mortal-oyster-phpchart-778568894d-b4fv4
+5m30s       Normal    ScalingReplicaSet   deployment/mortal-oyster-phpchart                          Scaled up replica set mortal-oyster-phpchart-778568894d to 1
+15m         Normal    Killing             pod/open-horse-mysqlchart-6b5d5f5bb9-zwjxv                 Stopping container mysqlchart
+13m         Normal    Killing             pod/php-deployment-68b76dd76-4mwvz                         Stopping container php-container
+<unknown>   Normal    Scheduled           pod/php-deployment-68b76dd76-9vkm6                         Successfully assigned default/php-deployment-68b76dd76-9vkm6 to ip-10-0-0-45
+13m         Normal    Pulling             pod/php-deployment-68b76dd76-9vkm6                         Pulling image "vkdocker055/php"
+13m         Normal    Pulled              pod/php-deployment-68b76dd76-9vkm6                         Successfully pulled image "vkdocker055/php"
+13m         Normal    Created             pod/php-deployment-68b76dd76-9vkm6                         Created container php-container
+13m         Normal    Started             pod/php-deployment-68b76dd76-9vkm6                         Started container php-container
+11m         Normal    Killing             pod/php-deployment-68b76dd76-9vkm6                         Stopping container php-container
+<unknown>   Normal    Scheduled           pod/php-deployment-68b76dd76-pl8sp                         Successfully assigned default/php-deployment-68b76dd76-pl8sp to ip-10-0-0-45
+11m         Normal    Pulling             pod/php-deployment-68b76dd76-pl8sp                         Pulling image "vkdocker055/php"
+11m         Normal    Pulled              pod/php-deployment-68b76dd76-pl8sp                         Successfully pulled image "vkdocker055/php"
+11m         Normal    Created             pod/php-deployment-68b76dd76-pl8sp                         Created container php-container
+11m         Normal    Started             pod/php-deployment-68b76dd76-pl8sp                         Started container php-container
+3m2s        Normal    Killing             pod/php-deployment-68b76dd76-pl8sp                         Stopping container php-container
+13m         Normal    SuccessfulCreate    replicaset/php-deployment-68b76dd76                        Created pod: php-deployment-68b76dd76-9vkm6
+11m         Normal    SuccessfulCreate    replicaset/php-deployment-68b76dd76                        Created pod: php-deployment-68b76dd76-pl8sp
+2m54s       Warning   FailedGetScale      horizontalpodautoscaler/php-deployment                     deployments/scale.apps "php_app" not found
+root@ip-10-0-0-14:~/helm/mychart# kubectl get pod
+NAME                                                   READY   STATUS             RESTARTS   AGE
+dashboard-demo-kubernetes-dashboard-59db4d65dc-4s8mh   0/1     CrashLoopBackOff   655        3d
+exiled-worm-mychart-86f587c788-rz7x6                   0/1     Running            1          68s
+root@ip-10-0-0-14:~/helm/mychart# kubectl get event
+LAST SEEN   TYPE      REASON              OBJECT                                                     MESSAGE
+25m         Warning   Unhealthy           pod/affable-cow-phpchart-7ffb65665f-lhtft                  Readiness probe failed: HTTP probe failed with statuscode: 404
+15m         Warning   BackOff             pod/affable-cow-phpchart-7ffb65665f-lhtft                  Back-off restarting failed container
+3m58s       Warning   BackOff             pod/dashboard-demo-kubernetes-dashboard-59db4d65dc-4s8mh   Back-off restarting failed container
+3m45s       Normal    FailedBinding       persistentvolumeclaim/data-quaffing-sabertooth-mariadb-0   no persistent volumes available for this claim and no storage class is set
+15m         Normal    Killing             pod/eponymous-sabertooth-mysqlchart-7dcbc64746-t828l       Stopping container mysqlchart
+15m         Warning   Unhealthy           pod/eponymous-sabertooth-mysqlchart-7dcbc64746-t828l       Liveness probe failed: Get http://192.168.103.84:80/: dial tcp 192.168.103.84:80: connect: connection refused
+<unknown>   Normal    Scheduled           pod/exiled-worm-mychart-86f587c788-rz7x6                   Successfully assigned default/exiled-worm-mychart-86f587c788-rz7x6 to ip-10-0-0-45
+16s         Normal    Pulled              pod/exiled-worm-mychart-86f587c788-rz7x6                   Container image "vkdocker055/php:latest" already present on machine
+16s         Normal    Created             pod/exiled-worm-mychart-86f587c788-rz7x6                   Created container mychart
+15s         Normal    Started             pod/exiled-worm-mychart-86f587c788-rz7x6                   Started container mychart
+7s          Warning   Unhealthy           pod/exiled-worm-mychart-86f587c788-rz7x6                   Readiness probe failed: HTTP probe failed with statuscode: 404
+6s          Warning   Unhealthy           pod/exiled-worm-mychart-86f587c788-rz7x6                   Liveness probe failed: HTTP probe failed with statuscode: 404
+46s         Normal    Killing             pod/exiled-worm-mychart-86f587c788-rz7x6                   Container mychart failed liveness probe, will be restarted
+72s         Normal    SuccessfulCreate    replicaset/exiled-worm-mychart-86f587c788                  Created pod: exiled-worm-mychart-86f587c788-rz7x6
+72s         Normal    ScalingReplicaSet   deployment/exiled-worm-mychart                             Scaled up replica set exiled-worm-mychart-86f587c788 to 1
+15m         Normal    Killing             pod/mean-puma-mychart-6447569cf6-9tpcm                     Stopping container mychart
+<unknown>   Normal    Scheduled           pod/mortal-oyster-phpchart-778568894d-b4fv4                Successfully assigned default/mortal-oyster-phpchart-778568894d-b4fv4 to ip-10-0-0-45
+5m5s        Normal    Pulled              pod/mortal-oyster-phpchart-778568894d-b4fv4                Container image "vkdocker055/php1:latest" already present on machine
+5m5s        Normal    Created             pod/mortal-oyster-phpchart-778568894d-b4fv4                Created container phpchart
+5m5s        Normal    Started             pod/mortal-oyster-phpchart-778568894d-b4fv4                Started container phpchart
+4m21s       Warning   Unhealthy           pod/mortal-oyster-phpchart-778568894d-b4fv4                Readiness probe failed: HTTP probe failed with statuscode: 404
+4m35s       Warning   Unhealthy           pod/mortal-oyster-phpchart-778568894d-b4fv4                Liveness probe failed: HTTP probe failed with statuscode: 404
+4m35s       Normal    Killing             pod/mortal-oyster-phpchart-778568894d-b4fv4                Container phpchart failed liveness probe, will be restarted
+6m4s        Normal    SuccessfulCreate    replicaset/mortal-oyster-phpchart-778568894d               Created pod: mortal-oyster-phpchart-778568894d-b4fv4
+6m4s        Normal    ScalingReplicaSet   deployment/mortal-oyster-phpchart                          Scaled up replica set mortal-oyster-phpchart-778568894d to 1
+15m         Normal    Killing             pod/open-horse-mysqlchart-6b5d5f5bb9-zwjxv                 Stopping container mysqlchart
+13m         Normal    Killing             pod/php-deployment-68b76dd76-4mwvz                         Stopping container php-container
+<unknown>   Normal    Scheduled           pod/php-deployment-68b76dd76-9vkm6                         Successfully assigned default/php-deployment-68b76dd76-9vkm6 to ip-10-0-0-45
+13m         Normal    Pulling             pod/php-deployment-68b76dd76-9vkm6                         Pulling image "vkdocker055/php"
+13m         Normal    Pulled              pod/php-deployment-68b76dd76-9vkm6                         Successfully pulled image "vkdocker055/php"
+13m         Normal    Created             pod/php-deployment-68b76dd76-9vkm6                         Created container php-container
+13m         Normal    Started             pod/php-deployment-68b76dd76-9vkm6                         Started container php-container
+12m         Normal    Killing             pod/php-deployment-68b76dd76-9vkm6                         Stopping container php-container
+<unknown>   Normal    Scheduled           pod/php-deployment-68b76dd76-pl8sp                         Successfully assigned default/php-deployment-68b76dd76-pl8sp to ip-10-0-0-45
+12m         Normal    Pulling             pod/php-deployment-68b76dd76-pl8sp                         Pulling image "vkdocker055/php"
+12m         Normal    Pulled              pod/php-deployment-68b76dd76-pl8sp                         Successfully pulled image "vkdocker055/php"
+12m         Normal    Created             pod/php-deployment-68b76dd76-pl8sp                         Created container php-container
+12m         Normal    Started             pod/php-deployment-68b76dd76-pl8sp                         Started container php-container
+3m36s       Normal    Killing             pod/php-deployment-68b76dd76-pl8sp                         Stopping container php-container
+13m         Normal    SuccessfulCreate    replicaset/php-deployment-68b76dd76                        Created pod: php-deployment-68b76dd76-9vkm6
+12m         Normal    SuccessfulCreate    replicaset/php-deployment-68b76dd76                        Created pod: php-deployment-68b76dd76-pl8sp
+3m28s       Warning   FailedGetScale      horizontalpodautoscaler/php-deployment                     deployments/scale.apps "php_app" not found
+root@ip-10-0-0-14:~/helm/mychart# kubectl get pod
+NAME                                                   READY   STATUS             RESTARTS   AGE
+dashboard-demo-kubernetes-dashboard-59db4d65dc-4s8mh   0/1     CrashLoopBackOff   655        3d
+exiled-worm-mychart-86f587c788-rz7x6                   0/1     Running            4          4m42s
+root@ip-10-0-0-14:~/helm/mychart# helm ls
+NAME          	REVISION	UPDATED                 	STATUS  	CHART                      	APP VERSION	NAMESPACE
+dashboard-demo	1       	Mon Jan 13 03:23:29 2020	DEPLOYED	kubernetes-dashboard-1.10.1	1.10.1     	default  
+exiled-worm   	1       	Thu Jan 16 09:28:09 2020	DEPLOYED	mychart-0.1.0              	1.0        	default  
+root@ip-10-0-0-14:~/helm/mychart# helm delete exiled-worm 
+release "exiled-worm" deleted
+root@ip-10-0-0-14:~/helm/mychart# vi values.yaml 
+root@ip-10-0-0-14:~/helm/mychart# ls
+Chart.yaml  charts  templates  values.yaml
+root@ip-10-0-0-14:~/helm/mychart# helm install .  --set service.type=NodePort
+NAME:   eager-tiger
+LAST DEPLOYED: Thu Jan 16 09:34:14 2020
+NAMESPACE: default
+STATUS: DEPLOYED
+
+RESOURCES:
+==> v1/Deployment
+NAME                 AGE
+eager-tiger-mychart  0s
+
+==> v1/Pod(related)
+NAME                                  AGE
+eager-tiger-mychart-675c586849-t9zpf  0s
+
+==> v1/Service
+NAME                 AGE
+eager-tiger-mychart  0s
+
+==> v1/ServiceAccount
+NAME                 AGE
+eager-tiger-mychart  1s
+
+
+NOTES:
+1. Get the application URL by running these commands:
+  export NODE_PORT=$(kubectl get --namespace default -o jsonpath="{.spec.ports[0].nodePort}" services eager-tiger-mychart)
+  export NODE_IP=$(kubectl get nodes --namespace default -o jsonpath="{.items[0].status.addresses[0].address}")
+  echo http://$NODE_IP:$NODE_PORT
+
+root@ip-10-0-0-14:~/helm/mychart# kubectl get pod
+NAME                                                   READY   STATUS             RESTARTS   AGE
+dashboard-demo-kubernetes-dashboard-59db4d65dc-4s8mh   0/1     CrashLoopBackOff   656        3d
+eager-tiger-mychart-675c586849-t9zpf                   1/1     Running            0          12s
+root@ip-10-0-0-14:~/helm/mychart# kubectl get svc
+NAME                                  TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE
+dashboard-demo-kubernetes-dashboard   ClusterIP   10.96.216.38   <none>        443/TCP        3d6h
+eager-tiger-mychart                   NodePort    10.96.56.133   <none>        80:32111/TCP   29s
+kubernetes                            ClusterIP   10.96.0.1      <none>        443/TCP        7d6h
+root@ip-10-0-0-14:~/helm/mychart# kubectl get pod
+NAME                                                   READY   STATUS             RESTARTS   AGE
+dashboard-demo-kubernetes-dashboard-59db4d65dc-4s8mh   0/1     CrashLoopBackOff   657        3d
+eager-tiger-mychart-675c586849-t9zpf                   1/1     Running            0          8m24s
+root@ip-10-0-0-14:~/helm/mychart# kubectl delete pod eager-tiger-mychart-675c586849-t9zpf 
+pod "eager-tiger-mychart-675c586849-t9zpf" deleted
+^C
+root@ip-10-0-0-14:~/helm/mychart# kubectl get pod
+NAME                                                   READY   STATUS             RESTARTS   AGE
+dashboard-demo-kubernetes-dashboard-59db4d65dc-4s8mh   0/1     CrashLoopBackOff   657        3d
+eager-tiger-mychart-675c586849-r78sl                   1/1     Running            0          19s
+eager-tiger-mychart-675c586849-t9zpf                   1/1     Terminating        0          9m29s
+root@ip-10-0-0-14:~/helm/mychart# 
+  [Restored 17-Jan-2020 at 8:06:13 AM]
+Last login: Fri Jan 17 08:06:13 on ttys001
+Restored session: Thu Jan 16 17:20:02 IST 2020
+apples-MacBook-Pro:Downloads Arlab07$ ls
+A Images
+A Images.zip
+Apache_mysql_Dockerfil
+Codebase
+Codebase.zip
+CreativeCSS3AnimationMenus.zip
+Demo
+Demo (1).zip
+Demo.zip
+Devops draw-Page-4 (1).pdf
+Devops draw-Page-4.pdf
+Docker (1).dmg
+Docker.dmg
+DockerFile.mp4
+DockerSwarm.mp4
+Firefox 69.0.3.dmg
+Firefox 70.0.1 (1).dmg
+Firefox 70.0.1.dmg
+IMG_20191211_133351 (1).jpg
+IMG_20191211_133351.jpg
+Kiran K.R1(1).pdf
+Kubernetes_1.pdf
+Kubernetes_2.pdf
+LoopSpot Api.postman_collection.json
+MCAPGDCA-101 (1).pdf
+MCAPGDCA-101.pdf
+ManuPurohit resume.docx
+Montserrat
+Montserrat.zip
+Opera Installer.app
+Postman-osx-7.11.0.zip
+Postman.app
+Qlicr_hq
+Qlicr_hq.zip
+Raleway
+Raleway.zip
+Skype-8.52.0.145.dmg
+TPCTracker.apk
+VBoxGuestAdditions_5.0.14.iso
+VMware-Fusion-11.5.1-15018442.dmg
+Vikas - Documents.pdf
+VirtualBox-6.0.14-133895-OSX.dmg
+Visual Studio Code.app
+WhatsApp Image 2019-12-31 at 11.03.51.jpeg
+a-69.pdf
+accessKeys.csv
+ansible.pem
+anydesk-2.dmg
+anydesk.dmg
+build
+build.zip
+complex
+complex.zip
+create-services.yml
+create-system-service.j2
+credentials (1).csv
+credentials (2).csv
+credentials (3).csv
+credentials.csv
+customec2.pem
+docker-compose.yml
+dockerkey.pem
+fontawesome-free-5.11.2-web
+fontawesome-free-5.11.2-web (1).zip
+fontawesome-free-5.11.2-web.zip
+get-pip.py
+gladminds-master.zip
+laodtest.pem
+loopspot_api
+loopspot_api.zip
+loopspot_live (1).sql
+loopspot_live (1).sql.zip
+mfsales-vikas_master.zip
+my-app-1.0
+my-app-1.0 (3) 2
+my-app-1.0 (4).zip
+my-app-1.0.0
+mysql-workbench-community-8.0.19-macos-x86_64.dmg
+notepad.dmg
+property_i.sql
+property_i.zip
+python-3.7.5-macosx10.9.pkg
+saber-celer-bridge-ansible-master
+saber-celer-bridge-ansible-master.zip
+shopping cart
+sidebar
+system-service-config.j2
+ubuntu-18.04.3-desktop-amd64.iso
+welcome-index.html
+work_305883
+work_305883.zip
+apples-MacBook-Pro:Downloads Arlab07$ 
+  [Restored 17-Jan-2020 at 7:27:33 PM]
+Last login: Fri Jan 17 19:27:32 on ttys001
+Restored session: Fri Jan 17 17:18:17 IST 2020
+apples-MacBook-Pro:Downloads Arlab07$ ssh -i "ansible.pem" ubuntu@50.19.171.181
+The authenticity of host '50.19.171.181 (50.19.171.181)' can't be established.
+ECDSA key fingerprint is SHA256:NXPiekxb8m/T8w22LLay4PPNuj2wt8hh0gvMzWpE3SE.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '50.19.171.181' (ECDSA) to the list of known hosts.
+Welcome to Ubuntu 16.04.6 LTS (GNU/Linux 4.4.0-1100-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+ * Overheard at KubeCon: "microk8s.status just blew my mind".
+
+     https://microk8s.io/docs/commands#microk8s.status
+
+0 packages can be updated.
+0 updates are security updates.
+
+
+Last login: Thu Jan 16 09:12:17 2020 from 103.82.80.145
+ubuntu@ip-10-0-0-14:~$ sudo su
+sudo: unable to resolve host ip-10-0-0-14
+bash: export: `=': not a valid identifier
+bash: export: `/root/go': not a valid identifier
+bash: export: `=': not a valid identifier
+bash: export: `/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/bin': not a valid identifier
+root@ip-10-0-0-14:/home/ubuntu# ls
+root@ip-10-0-0-14:/home/ubuntu# cd
+root@ip-10-0-0-14:~# cd helm/
+root@ip-10-0-0-14:~/helm# ls
+mychart  mysqlchart  phpchart  tiller-clusterrolebinding.yaml
+root@ip-10-0-0-14:~/helm# helm lis
+Error: unknown command "lis" for "helm"
+
+Did you mean this?
+	lint
+	list
+
+Run 'helm --help' for usage.
+root@ip-10-0-0-14:~/helm# helm list
+Error: could not find a ready tiller pod
+root@ip-10-0-0-14:~/helm# kubectl get node
+NAME           STATUS     ROLES    AGE   VERSION
+ip-10-0-0-14   Ready      master   9d    v1.17.0
+ip-10-0-0-45   NotReady   <none>   9d    v1.17.0
+root@ip-10-0-0-14:~/helm# tiller
+[main] 2020/01/18 06:18:51 Starting Tiller v2.16.1 (tls=false)
+[main] 2020/01/18 06:18:51 GRPC listening on :44134
+[main] 2020/01/18 06:18:51 Probes listening on :44135
+[main] 2020/01/18 06:18:51 Storage driver is ConfigMap
+[main] 2020/01/18 06:18:51 Max history per release is 0
+^Z
+[1]+  Stopped                 tiller
+root@ip-10-0-0-14:~/helm# helm list
+Error: could not find a ready tiller pod
+root@ip-10-0-0-14:~/helm# helm list
+Error: could not find a ready tiller pod
+root@ip-10-0-0-14:~/helm# kubectl get pod
+NAME                                                   READY   STATUS        RESTARTS   AGE
+dashboard-demo-kubernetes-dashboard-59db4d65dc-4s8mh   0/1     Terminating   679        4d21h
+dashboard-demo-kubernetes-dashboard-59db4d65dc-57zgg   0/1     Pending       0          69s
+eager-tiger-mychart-675c586849-kt48r                   0/1     Pending       0          69s
+eager-tiger-mychart-675c586849-r78sl                   1/1     Terminating   0          44h
+root@ip-10-0-0-14:~/helm# kubectl get svc
+NAME                                  TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE
+dashboard-demo-kubernetes-dashboard   ClusterIP   10.96.216.38   <none>        443/TCP        5d2h
+eager-tiger-mychart                   NodePort    10.96.56.133   <none>        80:32111/TCP   44h
+kubernetes                            ClusterIP   10.96.0.1      <none>        443/TCP        9d
+root@ip-10-0-0-14:~/helm# kubectl get pod
+NAME                                                   READY   STATUS        RESTARTS   AGE
+dashboard-demo-kubernetes-dashboard-59db4d65dc-4s8mh   0/1     Terminating   679        4d21h
+dashboard-demo-kubernetes-dashboard-59db4d65dc-57zgg   0/1     Pending       0          119s
+eager-tiger-mychart-675c586849-kt48r                   0/1     Pending       0          119s
+eager-tiger-mychart-675c586849-r78sl                   0/1     Terminating   0          44h
+root@ip-10-0-0-14:~/helm# kubectl get svc
+NAME                                  TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE
+dashboard-demo-kubernetes-dashboard   ClusterIP   10.96.216.38   <none>        443/TCP        5d2h
+eager-tiger-mychart                   NodePort    10.96.56.133   <none>        80:32111/TCP   44h
+kubernetes                            ClusterIP   10.96.0.1      <none>        443/TCP        9d
+root@ip-10-0-0-14:~/helm# helm list
+Error: could not find a ready tiller pod
+root@ip-10-0-0-14:~/helm# tiller
+[main] 2020/01/18 06:21:28 Server died: listen tcp :44134: bind: address already in use
+root@ip-10-0-0-14:~/helm# ls
+mychart  mysqlchart  phpchart  tiller-clusterrolebinding.yaml
+root@ip-10-0-0-14:~/helm# cd my
+mychart/    mysqlchart/ 
+root@ip-10-0-0-14:~/helm# cd mychart/
+root@ip-10-0-0-14:~/helm/mychart# ls
+Chart.yaml  charts  templates  values.yaml
+root@ip-10-0-0-14:~/helm/mychart# vi values.yaml 
+root@ip-10-0-0-14:~/helm/mychart# helm list
+NAME          	REVISION	UPDATED                 	STATUS  	CHART                      	APP VERSION	NAMESPACE
+dashboard-demo	1       	Mon Jan 13 03:23:29 2020	DEPLOYED	kubernetes-dashboard-1.10.1	1.10.1     	default  
+eager-tiger   	1       	Thu Jan 16 09:34:14 2020	DEPLOYED	mychart-0.1.0              	1.0        	default  
+E0118 06:22:05.546277   14874 portforward.go:385] error copying from local connection to remote stream: read tcp4 127.0.0.1:33306->127.0.0.1:59652: read: connection reset by peer
+root@ip-10-0-0-14:~/helm/mychart# helm delete eager-tiger
+release "eager-tiger" deleted
+root@ip-10-0-0-14:~/helm/mychart# helm list
+NAME          	REVISION	UPDATED                 	STATUS  	CHART                      	APP VERSION	NAMESPACE
+dashboard-demo	1       	Mon Jan 13 03:23:29 2020	DEPLOYED	kubernetes-dashboard-1.10.1	1.10.1     	default  
+root@ip-10-0-0-14:~/helm/mychart# helm install .  --set service.type=NodePort
+NAME:   juiced-cricket
+LAST DEPLOYED: Sat Jan 18 06:24:41 2020
+NAMESPACE: default
+STATUS: DEPLOYED
+
+RESOURCES:
+==> v1/Deployment
+NAME                    AGE
+juiced-cricket-mychart  1s
+
+==> v1/Pod(related)
+NAME                                     AGE
+juiced-cricket-mychart-7bf8b99449-v7mpn  0s
+
+==> v1/Service
+NAME                    AGE
+juiced-cricket-mychart  1s
+
+==> v1/ServiceAccount
+NAME                    AGE
+juiced-cricket-mychart  1s
+
+
+NOTES:
+1. Get the application URL by running these commands:
+  export NODE_PORT=$(kubectl get --namespace default -o jsonpath="{.spec.ports[0].nodePort}" services juiced-cricket-mychart)
+  export NODE_IP=$(kubectl get nodes --namespace default -o jsonpath="{.items[0].status.addresses[0].address}")
+  echo http://$NODE_IP:$NODE_PORT
+
+root@ip-10-0-0-14:~/helm/mychart# helm list
+NAME          	REVISION	UPDATED                 	STATUS  	CHART                      	APP VERSION	NAMESPACE
+dashboard-demo	1       	Mon Jan 13 03:23:29 2020	DEPLOYED	kubernetes-dashboard-1.10.1	1.10.1     	default  
+juiced-cricket	1       	Sat Jan 18 06:24:41 2020	DEPLOYED	mychart-0.1.0              	1.0        	default  
+root@ip-10-0-0-14:~/helm/mychart# helm delete juiced-cricket
+release "juiced-cricket" deleted
+root@ip-10-0-0-14:~/helm/mychart# helm install . -n phptest  --set service.type=NodePort
+NAME:   phptest
+LAST DEPLOYED: Sat Jan 18 06:26:06 2020
+NAMESPACE: default
+STATUS: DEPLOYED
+
+RESOURCES:
+==> v1/Deployment
+NAME             AGE
+phptest-mychart  0s
+
+==> v1/Pod(related)
+NAME                              AGE
+phptest-mychart-787c96fb9f-tqftq  0s
+
+==> v1/Service
+NAME             AGE
+phptest-mychart  0s
+
+==> v1/ServiceAccount
+NAME             AGE
+phptest-mychart  0s
+
+
+NOTES:
+1. Get the application URL by running these commands:
+  export NODE_PORT=$(kubectl get --namespace default -o jsonpath="{.spec.ports[0].nodePort}" services phptest-mychart)
+  export NODE_IP=$(kubectl get nodes --namespace default -o jsonpath="{.items[0].status.addresses[0].address}")
+  echo http://$NODE_IP:$NODE_PORT
+
+root@ip-10-0-0-14:~/helm/mychart# helm list
+NAME          	REVISION	UPDATED                 	STATUS  	CHART                      	APP VERSION	NAMESPACE
+dashboard-demo	1       	Mon Jan 13 03:23:29 2020	DEPLOYED	kubernetes-dashboard-1.10.1	1.10.1     	default  
+phptest       	1       	Sat Jan 18 06:26:06 2020	DEPLOYED	mychart-0.1.0              	1.0        	default  
+root@ip-10-0-0-14:~/helm/mychart# helm status phptest
+LAST DEPLOYED: Sat Jan 18 06:26:06 2020
+NAMESPACE: default
+STATUS: DEPLOYED
+
+RESOURCES:
+==> v1/Deployment
+NAME             AGE
+phptest-mychart  119s
+
+==> v1/Pod(related)
+NAME                              AGE
+phptest-mychart-787c96fb9f-tqftq  119s
+
+==> v1/Service
+NAME             AGE
+phptest-mychart  119s
+
+==> v1/ServiceAccount
+NAME             AGE
+phptest-mychart  119s
+
+
+NOTES:
+1. Get the application URL by running these commands:
+  export NODE_PORT=$(kubectl get --namespace default -o jsonpath="{.spec.ports[0].nodePort}" services phptest-mychart)
+  export NODE_IP=$(kubectl get nodes --namespace default -o jsonpath="{.items[0].status.addresses[0].address}")
+  echo http://$NODE_IP:$NODE_PORT
+
+root@ip-10-0-0-14:~/helm/mychart# helm delete phptest
+release "phptest" deleted
+root@ip-10-0-0-14:~/helm/mychart# helm install . --name my-todo-app --set serviceType=LoadBalancer
+NAME:   my-todo-app
+LAST DEPLOYED: Sat Jan 18 06:29:30 2020
+NAMESPACE: default
+STATUS: DEPLOYED
+
+RESOURCES:
+==> v1/Deployment
+NAME                 AGE
+my-todo-app-mychart  0s
+
+==> v1/Pod(related)
+NAME                                  AGE
+my-todo-app-mychart-679d6d98dd-mzngm  0s
+
+==> v1/Service
+NAME                 AGE
+my-todo-app-mychart  0s
+
+==> v1/ServiceAccount
+NAME                 AGE
+my-todo-app-mychart  0s
+
+
+NOTES:
+1. Get the application URL by running these commands:
+  export POD_NAME=$(kubectl get pods --namespace default -l "app.kubernetes.io/name=mychart,app.kubernetes.io/instance=my-todo-app" -o jsonpath="{.items[0].metadata.name}")
+  echo "Visit http://127.0.0.1:8080 to use your application"
+  kubectl port-forward $POD_NAME 8080:80
+
+root@ip-10-0-0-14:~/helm/mychart# kubectl get pod
+NAME                                                   READY   STATUS             RESTARTS   AGE
+dashboard-demo-kubernetes-dashboard-59db4d65dc-57zgg   0/1     CrashLoopBackOff   6          11m
+my-todo-app-mychart-679d6d98dd-mzngm                   1/1     Running            0          17s
+phptest-mychart-787c96fb9f-tqftq                       1/1     Terminating        0          3m40s
+root@ip-10-0-0-14:~/helm/mychart# kubectl get svc
+NAME                                  TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)   AGE
+dashboard-demo-kubernetes-dashboard   ClusterIP   10.96.216.38   <none>        443/TCP   5d3h
+kubernetes                            ClusterIP   10.96.0.1      <none>        443/TCP   9d
+my-todo-app-mychart                   ClusterIP   10.96.14.61    <none>        80/TCP    44s
+root@ip-10-0-0-14:~/helm/mychart# helm list
+NAME          	REVISION	UPDATED                 	STATUS  	CHART                      	APP VERSION	NAMESPACE
+dashboard-demo	1       	Mon Jan 13 03:23:29 2020	DEPLOYED	kubernetes-dashboard-1.10.1	1.10.1     	default  
+my-todo-app   	1       	Sat Jan 18 06:29:30 2020	DEPLOYED	mychart-0.1.0              	1.0        	default  
+root@ip-10-0-0-14:~/helm/mychart# helm delete my-todo-app
+release "my-todo-app" deleted
+root@ip-10-0-0-14:~/helm/mychart# helm install . --name my-todo-app --set serviceType=LoadBalancer
+Error: a release named my-todo-app already exists.
+Run: helm ls --all my-todo-app; to check the status of the release
+Or run: helm del --purge my-todo-app; to delete it
+root@ip-10-0-0-14:~/helm/mychart# helm ls
+NAME          	REVISION	UPDATED                 	STATUS  	CHART                      	APP VERSION	NAMESPACE
+dashboard-demo	1       	Mon Jan 13 03:23:29 2020	DEPLOYED	kubernetes-dashboard-1.10.1	1.10.1     	default  
+root@ip-10-0-0-14:~/helm/mychart# kubectl get svc
+NAME                                  TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)   AGE
+dashboard-demo-kubernetes-dashboard   ClusterIP   10.96.216.38   <none>        443/TCP   5d3h
+kubernetes                            ClusterIP   10.96.0.1      <none>        443/TCP   9d
+root@ip-10-0-0-14:~/helm/mychart# helm install . --name my-todo-app1 --set serviceType=LoadBalancer
+NAME:   my-todo-app1
+LAST DEPLOYED: Sat Jan 18 06:32:50 2020
+NAMESPACE: default
+STATUS: DEPLOYED
+
+RESOURCES:
+==> v1/Deployment
+NAME                  AGE
+my-todo-app1-mychart  0s
+
+==> v1/Pod(related)
+NAME                                   AGE
+my-todo-app1-mychart-75d96d5ffc-rrrfg  0s
+
+==> v1/Service
+NAME                  AGE
+my-todo-app1-mychart  0s
+
+==> v1/ServiceAccount
+NAME                  AGE
+my-todo-app1-mychart  0s
+
+
+NOTES:
+1. Get the application URL by running these commands:
+  export POD_NAME=$(kubectl get pods --namespace default -l "app.kubernetes.io/name=mychart,app.kubernetes.io/instance=my-todo-app1" -o jsonpath="{.items[0].metadata.name}")
+  echo "Visit http://127.0.0.1:8080 to use your application"
+  kubectl port-forward $POD_NAME 8080:80
+
+root@ip-10-0-0-14:~/helm/mychart# kubectl describe svc my-todo-app
+Name:              my-todo-app1-mychart
+Namespace:         default
+Labels:            app.kubernetes.io/instance=my-todo-app1
+                   app.kubernetes.io/managed-by=Tiller
+                   app.kubernetes.io/name=mychart
+                   app.kubernetes.io/version=1.0
+                   helm.sh/chart=mychart-0.1.0
+Annotations:       <none>
+Selector:          app.kubernetes.io/instance=my-todo-app1,app.kubernetes.io/name=mychart
+Type:              ClusterIP
+IP:                10.96.110.248
+Port:              http  80/TCP
+TargetPort:        http/TCP
+Endpoints:         
+Session Affinity:  None
+Events:            <none>
+
+root@ip-10-0-0-14:~/helm/mychart# kubectl describe svc my-todo-app1
+Name:              my-todo-app1-mychart
+Namespace:         default
+Labels:            app.kubernetes.io/instance=my-todo-app1
+                   app.kubernetes.io/managed-by=Tiller
+                   app.kubernetes.io/name=mychart
+                   app.kubernetes.io/version=1.0
+                   helm.sh/chart=mychart-0.1.0
+Annotations:       <none>
+Selector:          app.kubernetes.io/instance=my-todo-app1,app.kubernetes.io/name=mychart
+Type:              ClusterIP
+IP:                10.96.110.248
+Port:              http  80/TCP
+TargetPort:        http/TCP
+Endpoints:         192.168.103.92:80
+Session Affinity:  None
+Events:            <none>
+
+root@ip-10-0-0-14:~/helm/mychart# ls
+Chart.yaml  charts  templates  values.yaml
+root@ip-10-0-0-14:~/helm/mychart# cd templates/
+root@ip-10-0-0-14:~/helm/mychart/templates# ls
+NOTES.txt  _helpers.tpl  deployment.yaml  ingress.yaml  service.yaml  serviceaccount.yaml  tests
+root@ip-10-0-0-14:~/helm/mychart/templates# vi service
+root@ip-10-0-0-14:~/helm/mychart/templates# vi service.yaml 
+root@ip-10-0-0-14:~/helm/mychart/templates# kubectl describe svc my-todo-app1
+Name:              my-todo-app1-mychart
+Namespace:         default
+Labels:            app.kubernetes.io/instance=my-todo-app1
+                   app.kubernetes.io/managed-by=Tiller
+                   app.kubernetes.io/name=mychart
+                   app.kubernetes.io/version=1.0
+                   helm.sh/chart=mychart-0.1.0
+Annotations:       <none>
+Selector:          app.kubernetes.io/instance=my-todo-app1,app.kubernetes.io/name=mychart
+Type:              ClusterIP
+IP:                10.96.110.248
+Port:              http  80/TCP
+TargetPort:        http/TCP
+Endpoints:         192.168.103.92:80
+Session Affinity:  None
+Events:            <none>
+
+root@ip-10-0-0-14:~/helm/mychart/templates# helm delete my-todo-app1
+release "my-todo-app1" deleted
+root@ip-10-0-0-14:~/helm/mychart/templates# helm ls
+NAME          	REVISION	UPDATED                 	STATUS  	CHART                      	APP VERSION	NAMESPACE
+dashboard-demo	1       	Mon Jan 13 03:23:29 2020	DEPLOYED	kubernetes-dashboard-1.10.1	1.10.1     	default  
+root@ip-10-0-0-14:~/helm/mychart/templates# helm install . -n phptest  --set service.type=NodePort
+Error: no Chart.yaml exists in directory "/root/helm/mychart/templates"
+root@ip-10-0-0-14:~/helm/mychart/templates# cd ..
+root@ip-10-0-0-14:~/helm/mychart# ls
+Chart.yaml  charts  templates  values.yaml
+root@ip-10-0-0-14:~/helm/mychart# helm install . -n phptest  --set service.type=NodePort
+
+Error: a release named phptest already exists.
+Run: helm ls --all phptest; to check the status of the release
+Or run: helm del --purge phptest; to delete it
+root@ip-10-0-0-14:~/helm/mychart# 
+root@ip-10-0-0-14:~/helm/mychart# helm install . -n phptest1  --set service.type=NodePort
+NAME:   phptest1
+LAST DEPLOYED: Sat Jan 18 06:43:22 2020
+NAMESPACE: default
+STATUS: DEPLOYED
+
+RESOURCES:
+==> v1/Deployment
+NAME              AGE
+phptest1-mychart  1s
+
+==> v1/Pod(related)
+NAME                              AGE
+phptest1-mychart-5cc44f758-gbzsw  1s
+
+==> v1/Service
+NAME              AGE
+phptest1-mychart  1s
+
+==> v1/ServiceAccount
+NAME              AGE
+phptest1-mychart  1s
+
+
+NOTES:
+1. Get the application URL by running these commands:
+  export NODE_PORT=$(kubectl get --namespace default -o jsonpath="{.spec.ports[0].nodePort}" services phptest1-mychart)
+  export NODE_IP=$(kubectl get nodes --namespace default -o jsonpath="{.items[0].status.addresses[0].address}")
+  echo http://$NODE_IP:$NODE_PORT
+
+root@ip-10-0-0-14:~/helm/mychart# kubectl get svc
+NAME                                  TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE
+dashboard-demo-kubernetes-dashboard   ClusterIP   10.96.216.38    <none>        443/TCP        5d3h
+kubernetes                            ClusterIP   10.96.0.1       <none>        443/TCP        9d
+phptest1-mychart                      NodePort    10.96.193.164   <none>        80:32111/TCP   17s
+root@ip-10-0-0-14:~/helm/mychart# vi values.yaml 
+root@ip-10-0-0-14:~/helm/mychart# helm install . -n phptest2 --set service.type=NodePort
+NAME:   phptest2
+LAST DEPLOYED: Sat Jan 18 06:44:36 2020
+NAMESPACE: default
+STATUS: DEPLOYED
+
+RESOURCES:
+==> v1/Deployment
+NAME              AGE
+phptest2-mychart  0s
+
+==> v1/Service
+NAME              AGE
+phptest2-mychart  0s
+
+==> v1/ServiceAccount
+NAME              AGE
+phptest2-mychart  0s
+
+
+NOTES:
+1. Get the application URL by running these commands:
+  export NODE_PORT=$(kubectl get --namespace default -o jsonpath="{.spec.ports[0].nodePort}" services phptest2-mychart)
+  export NODE_IP=$(kubectl get nodes --namespace default -o jsonpath="{.items[0].status.addresses[0].address}")
+  echo http://$NODE_IP:$NODE_PORT
+
+root@ip-10-0-0-14:~/helm/mychart# kubectl get svc
+NAME                                  TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE
+dashboard-demo-kubernetes-dashboard   ClusterIP   10.96.216.38    <none>        443/TCP        5d3h
+kubernetes                            ClusterIP   10.96.0.1       <none>        443/TCP        9d
+phptest1-mychart                      NodePort    10.96.193.164   <none>        80:32111/TCP   79s
+phptest2-mychart                      NodePort    10.96.212.65    <none>        80:32211/TCP   5s
+root@ip-10-0-0-14:~/helm/mychart# ls
+Chart.yaml  charts  templates  values.yaml
+root@ip-10-0-0-14:~/helm/mychart# vi values.yaml 
+
+# Default values for mychart.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  repository: vkdocker055/test
+  tag: 1
+  pullPolicy: IfNotPresent
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name:
+
+podSecurityContext: {}
+  # fsGroup: 2000
+
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+service:
+  type: ClusterIP
+  port: 80
+  httpTargetPort: http
+  nodePorts:
+    http: 32211
+    tcp:
+      80: 32211
+ingress:
+  enabled: false
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  hosts:
+    - host: chart-example.local
+      paths: []
+
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
+
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+                                                                                                                                                                                          1,1           Top
