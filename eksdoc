@@ -1,0 +1,53 @@
+install node role cloudformation stack link
+https://amazon-eks.s3-us-west-2.amazonaws.com/cloudformation/2019-11-15/amazon-eks-nodegroup-role.yaml
+
+Below are the steps to install awscli using homebrew on your mac:
+1. Install homebrew on your mac terminal if you don’t have one using this command
+xcode-select --install
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+2. Install awscli using brew-
+brew install awscli
+
+3. Give permissions to pkgconfig
+chmod 755 /usr/local/lib/pkgconfig
+
+4. link your awscli
+brew link awscli
+
+Configure Your AWS CLI Credentials:
+aws Configure
+
+
+Install eksctl on macOS
+1. If you do not already have Homebrew installed on macOS, install it with the following command.
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+2. Install the Weaveworks Homebrew tap.
+brew tap weaveworks/tap
+
+3. Install or upgrade eksctl.
+brew install weaveworks/tap/eksctl
+brew upgrade eksctl && brew link --overwrite eksctl
+
+4. Test that your installation was successful with the following command.
+eksctl version 
+
+Eks Load Balancers- 
+                    Eks support Classic Load Balancer, Application Locad Balancer and network
+                    Load Balancer.
+                    Classic& network Load Balancer is for service type 'LoadBalancer'.
+                    Application Load Balancer is for Ingress Controller.
+                    Classic Load Balancer by default.
+                    network Load Balancer if this is specified:
+                    service.beta.kubernetes.io/aws-load-balancer-type: nlb
+* Configure the cluster with nodegroup command
+aws eks update-kubeconfig --name phpapp    
+
+* ecr Configure by CLI
+aws ecr get-login --no-include-email --region us-east-1
+
+* create repository
+aws ecr create-repository \
+    --repository-name sample-repo \
+    --image-scanning-configuration scanOnPush=true

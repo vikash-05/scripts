@@ -1,0 +1,22 @@
+image: atlassian/default-image:2
+
+pipelines:
+  default:
+    - step:
+        services:
+          - docker
+        script:
+           - apt-get update && apt-get install -y python3-pip
+           - pip3 install -U awscli
+           - eval $(aws ecr get-login --no-include-email)
+           - docker build -t k8s .
+           - docker tag k8s:latest 921106752573.dkr.ecr.us-east-1.amazonaws.com/k8s:2
+           - docker push 921106752573.dkr.ecr.us-east-1.amazonaws.com/k8s:2
+           - pipe: atlassian/aws-eks-kubectl-run:1.2.0
+             variables:
+              AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+              AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+              AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+              CLUSTER_NAME: 'phpapp'
+              KUBECTL_COMMAND: 'apply'
+              RESOURCE_PATH: 'php'

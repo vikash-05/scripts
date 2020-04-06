@@ -7,7 +7,7 @@ kubectl run php-apache --image=gcr.io/google_containers/hpa-example  --expose --
 
 2. Create HPA
 
-kubectl autoscale deployment php-apache --cpu-percent=50 --min=1 --max=2
+kubectl autoscale deployment php-apache --cpu-percent=50 --min=1 --max=5
 
 
 
@@ -19,4 +19,4 @@ kubectl run -i --tty load-generator --image=busybox /bin/sh
 
 
 
-while true; do wget -q -O- POD-IP-HERE; done
+while true; do wget -q -O- 10.100.93.178; done

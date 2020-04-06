@@ -67,3 +67,16 @@ command:
     - /metrics-server
     - --kubelet-insecure-tls
     - --kubelet-preferred-address-types=InternalIP
+**- install prometheus with helm
+ helm install stable/prometheus-operator --name prometheus-operator --namespace prometheus
+
+ - forward the port
+  kubectl port-forward -n prometheus prometheus-prometheus-operator-prometheus-0 9090
+
+** configure the grafana
+  kubectl port-forward $(kubectl get  pods --selector=app=grafana -n prometheus --output=jsonpath="{.items..metadata.name}") -n prometheus  3000
+
+ **- if get Error: namespaces "prometheus" is forbidden: User "system:serviceaccount:kube-system:default" cannot get resource "namespaces" in API group "" in the namespace "prometheus"
+kubectl create serviceaccount --namespace kube-system tiller
+kubectl create clusterrolebinding tiller-cluster-rule --clusterrole=cluster-admin --serviceaccount=kube-system:tiller
+kubectl patch deploy --namespace kube-system tiller-deploy -p '{"spec":{"template":{"spec":{"serviceAccount":"tiller"}}}}'

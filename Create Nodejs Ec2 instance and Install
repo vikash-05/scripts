@@ -1,0 +1,41 @@
+Create Nodejs Ec2 instance and Install dependency
+  
+1). An alternative that can get you a more recent version of Node.js is to add a PPA (personal package archive) maintained by NodeSource. This will have more up-to-date versions of Node.js than the official Ubuntu repositories, and allows you to choose between Node.js v4.x.
+
+- curl -sL https://deb.nodesource.com/setup_12.x -o nodesource_setup.sh
+
+* run the script.
+- sudo bash nodesource_setup.sh
+
+* The PPA will be added to your configuration and your local package cache will be updated automatically.
+- sudo apt-get install nodejs
+
+- node -v
+
+2) go to project directory
+- cd nodeManageDelivery/
+
+- npm install
+
+- npm start
+
+3). PM2 is a daemon process manager that will help you manage and keep your application online. Getting started with PM2 is straightforward, it is offered as a simple and intuitive CLI, installable via NPM.
+
+* install pm2
+- npm install pm2@latest -g
+
+* start pm2
+- pm2 start server.js
+
+* List the status of all application managed by PM2:
+- pm2 list
+
+* display logs in realtime
+- pm2 logs
+
+* realtime dashboard that fits directly into your terminal
+- pm2 monit
+
+* kill background node port
+- lsof -i ${8010} -t | xargs kill
+
